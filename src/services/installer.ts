@@ -287,7 +287,7 @@ export class Installer {
       return installed;
     }
 
-    const typeDirs = ['skills', 'agents', 'commands', 'hooks'];
+    const typeDirs = ['skills', 'agents', 'commands', 'hooks', 'plugins'];
 
     for (const typeDir of typeDirs) {
       const dir = path.join(installDir, typeDir);

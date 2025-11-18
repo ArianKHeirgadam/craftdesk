@@ -68,7 +68,7 @@ async function removeCommand(craftName: string): Promise<void> {
       logger.success('Updated craftdesk.lock');
     } else {
       // Try to remove from file system anyway (best effort)
-      const typesToTry = ['skill', 'agent', 'command', 'hook'];
+      const typesToTry = ['skill', 'agent', 'command', 'hook', 'plugin'];
       for (const type of typesToTry) {
         await installer.removeCraft(craftName, type);
       }

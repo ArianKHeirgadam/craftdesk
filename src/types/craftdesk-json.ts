@@ -1,7 +1,7 @@
 export interface CraftDeskJson {
   name: string;
   version: string;
-  type?: 'skill' | 'agent' | 'command' | 'hook';
+  type?: 'skill' | 'agent' | 'command' | 'hook' | 'plugin';
   description?: string;
   author?: string;
   license?: string;
@@ -12,7 +12,7 @@ export interface CraftDeskJson {
   };
   keywords?: string[];
 
-  // Dependencies - type-agnostic (skills, agents, commands, hooks can all depend on each other)
+  // Dependencies - type-agnostic (skills, agents, commands, hooks, plugins can all depend on each other)
   // Can be simple string versions or objects with version and registry
   dependencies?: Record<string, string | DependencyConfig>;
   devDependencies?: Record<string, string | DependencyConfig>;

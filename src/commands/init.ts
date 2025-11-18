@@ -10,7 +10,7 @@ export function createInitCommand(): Command {
     .option('-y, --yes', 'Skip prompts and use defaults')
     .option('-n, --name <name>', 'Project name')
     .option('--project-version <version>', 'Project version', '1.0.0')
-    .option('-t, --type <type>', 'Project type (skill, agent, command, hook)', 'skill')
+    .option('-t, --type <type>', 'Project type (skill, agent, command, hook, plugin)', 'skill')
     .option('-d, --description <desc>', 'Project description')
     .option('-a, --author <author>', 'Author name')
     .option('-l, --license <license>', 'License', 'MIT')

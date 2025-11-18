@@ -16,7 +16,7 @@ export interface LockEntry {
   version: string;
   resolved: string;  // Download URL or git URL
   integrity: string; // SHA-256 hash (or commit hash for git)
-  type: 'skill' | 'agent' | 'command' | 'hook';
+  type: 'skill' | 'agent' | 'command' | 'hook' | 'plugin';
   author?: string;
   registry?: string;
   scope?: string;

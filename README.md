@@ -1,6 +1,6 @@
 # CraftDesk CLI
 
-> **Dependency management for AI capabilities** - Install, manage, and version control your Claude Code skills, agents, commands, and hooks.
+> **Dependency management for AI capabilities** - Install, manage, and version control your Claude Code skills, agents, commands, hooks, and plugins.
 
 The official command-line interface for managing CraftDesk AI capabilities. Similar to npm for JavaScript or bundler for Ruby, CraftDesk CLI provides a complete package management solution for AI-powered development tools.
 
@@ -13,7 +13,7 @@ The official command-line interface for managing CraftDesk AI capabilities. Simi
 
 CraftDesk is a package manager for AI capabilities used in Claude Code and other AI development environments. It allows you to:
 
-- **Install AI skills, agents, commands, and hooks** from git repositories
+- **Install AI skills, agents, commands, hooks, and plugins** from git repositories
 - **Lock versions** for reproducible environments across teams
 - **Manage dependencies** with automatic transitive resolution
 - **Support monorepos** with subdirectory extraction
@@ -131,6 +131,7 @@ A **craft** is any AI capability:
 - **Agent** - Autonomous task executor (e.g., code-reviewer, test-runner)
 - **Command** - Slash command (e.g., /deploy, /analyze)
 - **Hook** - Event handler (e.g., pre-commit, post-install)
+- **Plugin** - Extended functionality or tool integration (e.g., mcp-server, custom-tools)
 
 ### Manifest File: craftdesk.json
 
@@ -199,7 +200,7 @@ Initialize a new craftdesk.json file.
 - `-y, --yes` - Skip prompts and use defaults
 - `-n, --name <name>` - Project name (default: directory name)
 - `-v, --version <version>` - Project version (default: "1.0.0")
-- `-t, --type <type>` - Project type: skill, agent, command, or hook (default: "skill")
+- `-t, --type <type>` - Project type: skill, agent, command, hook, or plugin (default: "skill")
 - `-d, --description <desc>` - Project description
 - `-a, --author <author>` - Author name
 - `-l, --license <license>` - License (default: "MIT")
@@ -258,7 +259,7 @@ Add a new dependency and install it immediately.
 - `-D, --save-dev` - Save as devDependency
 - `-O, --save-optional` - Save as optionalDependency
 - `-E, --save-exact` - Save exact version (no ^ or ~)
-- `-t, --type <type>` - Specify craft type (skill, agent, command, hook)
+- `-t, --type <type>` - Specify craft type (skill, agent, command, hook, plugin)
 
 **Examples:**
 
@@ -527,7 +528,7 @@ Complete specification of the craftdesk.json format:
 |-------|------|----------|-------------|
 | `name` | string | Yes | Craft name (lowercase, no spaces) |
 | `version` | string | Yes | Semantic version (e.g., "1.0.0") |
-| `type` | string | No | Craft type: skill, agent, command, hook |
+| `type` | string | No | Craft type: skill, agent, command, hook, plugin |
 | `description` | string | No | Short description |
 | `author` | string | No | Author name and email |
 | `license` | string | No | License identifier (e.g., "MIT") |

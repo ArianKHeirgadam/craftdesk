@@ -125,7 +125,7 @@ export class GitResolver {
           logger.debug(`Found direct file reference: ${gitInfo.file}`);
 
           // Try to find craftdesk.json to get type and metadata
-          let craftType: 'skill' | 'agent' | 'command' | 'hook' | undefined;
+          let craftType: 'skill' | 'agent' | 'command' | 'hook' | 'plugin' | undefined;
           let craftName: string | undefined;
           let craftVersion: string | undefined;
           let craftDeps: Record<string, any> | undefined;
@@ -218,13 +218,14 @@ export class GitResolver {
    * @returns The inferred craft type
    * @private
    */
-  private inferCraftTypeFromFilename(filename: string): 'skill' | 'agent' | 'command' | 'hook' {
+  private inferCraftTypeFromFilename(filename: string): 'skill' | 'agent' | 'command' | 'hook' | 'plugin' {
     const lower = filename.toLowerCase();
 
     // Check filename for type indicators
     if (lower.includes('agent')) return 'agent';
     if (lower.includes('command')) return 'command';
     if (lower.includes('hook')) return 'hook';
+    if (lower.includes('plugin')) return 'plugin';
     if (lower.includes('skill')) return 'skill';
 
     // Default to skill
@@ -244,17 +245,18 @@ export class GitResolver {
    * @returns The inferred craft type
    * @private
    */
-  private async inferCraftType(repoPath: string, subPath?: string): Promise<'skill' | 'agent' | 'command' | 'hook'> {
+  private async inferCraftType(repoPath: string, subPath?: string): Promise<'skill' | 'agent' | 'command' | 'hook' | 'plugin'> {
     const checkPath = subPath ? path.join(repoPath, subPath) : repoPath;
 
     // Check for type-indicating files
     const files = await fs.readdir(checkPath);
 
-    // Look for SKILL.md, AGENT.md, COMMAND.md, HOOK.md
+    // Look for SKILL.md, AGENT.md, COMMAND.md, HOOK.md, PLUGIN.md
     if (files.includes('SKILL.md')) return 'skill';
     if (files.includes('AGENT.md')) return 'agent';
     if (files.includes('COMMAND.md')) return 'command';
     if (files.includes('HOOK.md')) return 'hook';
+    if (files.includes('PLUGIN.md')) return 'plugin';
 
     // Check directory name hints
     const dirName = subPath ? path.basename(subPath) : path.basename(repoPath);
@@ -262,6 +264,7 @@ export class GitResolver {
     if (dirName.includes('agent')) return 'agent';
     if (dirName.includes('command')) return 'command';
     if (dirName.includes('hook')) return 'hook';
+    if (dirName.includes('plugin')) return 'plugin';
 
     // Default to skill
     return 'skill';

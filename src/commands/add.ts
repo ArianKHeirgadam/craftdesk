@@ -13,7 +13,7 @@ export function createAddCommand(): Command {
     .option('-D, --save-dev', 'Save as devDependency')
     .option('-O, --save-optional', 'Save as optionalDependency')
     .option('-E, --save-exact', 'Save exact version')
-    .option('-t, --type <type>', 'Specify craft type (skill, agent, command, hook)')
+    .option('-t, --type <type>', 'Specify craft type (skill, agent, command, hook, plugin)')
     .action(async (craftArg: string, options) => {
       await addCommand(craftArg, options);
     });
