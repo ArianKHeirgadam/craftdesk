@@ -2,7 +2,7 @@
 
 > **Dependency management for AI capabilities** - Install, manage, and version control your Claude Code skills, agents, commands, hooks, and plugins.
 
-The official command-line interface for managing CraftDesk AI capabilities. Similar to npm for JavaScript or bundler for Ruby, CraftDesk CLI provides a complete package management solution for AI-powered development tools.
+The command-line interface for managing your Coding AI capabilities. Similar to npm for JavaScript or bundler for Ruby, CraftDesk CLI provides a complete package management solution for AI-powered development tools.
 
 [![npm version](https://img.shields.io/npm/v/craftdesk.svg)](https://www.npmjs.com/package/craftdesk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
