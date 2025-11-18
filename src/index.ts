@@ -13,7 +13,7 @@ const program = new Command();
 program
   .name('craftdesk')
   .description('CLI for managing CraftDesk AI capabilities')
-  .version('0.2.0', '-v, --version')
+  .version('0.3.0', '-v, --version')
   .option('-d, --debug', 'Enable debug output', () => {
     process.env.DEBUG = 'true';
   });

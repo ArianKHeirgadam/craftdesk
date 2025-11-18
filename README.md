@@ -40,7 +40,7 @@ npm install -g craftdesk
 Verify installation:
 ```bash
 craftdesk --version
-# 0.2.0
+# 0.3.0
 ```
 
 **Requirements:** Node.js >= 18.0.0, Git, npm or yarn
