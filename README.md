@@ -104,17 +104,17 @@ This creates a `craftdesk.json` file:
 ### 2. Add Dependencies
 
 ```bash
-# Add from GitHub (auto-converts web URLs)
-craftdesk add https://github.com/user/repo/blob/main/skill.md
+# Add a single skill file from GitHub (auto-converts web URLs)
+craftdesk add https://github.com/aviflombaum/rspec-rails-agents/blob/main/rspec-dry-agent.md
 
 # Add from git repository
-craftdesk add git+https://github.com/user/custom-agent.git
+craftdesk add git+https://github.com/aviflombaum/rspec-rails-agents.git
 
 # Add from monorepo subdirectory
-craftdesk add https://github.com/user/repo/tree/main/skills/auth
+craftdesk add https://github.com/technicalpickles/pickled-claude-plugins/tree/main/plugins/working-in-monorepos/skills/working-in-monorepos
 
 # Add with explicit type
-craftdesk add https://github.com/user/repo/blob/main/agent.md --type agent
+craftdesk add https://github.com/aviflombaum/rspec-rails-agents/blob/main/rspec-dry-agent.md --type agent
 ```
 
 ### 3. Install Everything
